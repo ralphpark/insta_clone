@@ -173,7 +173,24 @@ class FeedItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text('좋아요 ${feedData.likeCount} 개',style: TextStyle(fontWeight: FontWeight.bold),),
         ),
-       ],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 4),
+          child: RichText(text: TextSpan(
+            children: [
+              TextSpan(
+                text: feedData.userName,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              TextSpan(
+                text: feedData.content,
+              ),
+            ],
+            style: const TextStyle(color: Colors.black),
+          )
+          ),
+        ),
+        const SizedBox(height: 8),
+      ],
     );
   }
 }

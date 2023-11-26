@@ -51,7 +51,7 @@ class _InstaCloneHomeState extends State<InstaCloneHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: index ==0 ? AppBar(
         // pub.dev에서 google_fonts 검색 후 사용
         title:  Text('Instagram', style: GoogleFonts.lobsterTwo(color: Colors.black, fontSize: 32),),
         centerTitle: false,
@@ -69,7 +69,7 @@ class _InstaCloneHomeState extends State<InstaCloneHome> {
             },
           ),
           ],
-      ),
+      ) : null,
       body:  InstaBody(index: index),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
